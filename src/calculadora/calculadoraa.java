@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package calculadora;
 
 import javax.swing.JOptionPane;
@@ -13,12 +12,13 @@ import javax.swing.JOptionPane;
  * @author JANCI
  */
 public class calculadoraa extends javax.swing.JFrame {
+    
+    String a="";
+    double b;
+    double res;
+    String tipo;
+    double num;
 
-        long a, b;
-        long res;
-        String tipo;
-        long num;
-        
     /**
      * Creates new form calculadoraa
      */
@@ -195,6 +195,11 @@ public class calculadoraa extends javax.swing.JFrame {
         getContentPane().add(btndivision, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 323, 50, 40));
 
         btnraiz.setText("rz");
+        btnraiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnraizActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnraiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 141, 50, 38));
 
         jButton18.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
@@ -262,40 +267,40 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("1");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "1");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnmasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmasActionPerformed
-        num = Long.parseLong(txta.getText());
+        num = Double.parseDouble(txta.getText());
         txta1.setText(num + "+");
         txta.setText("");
-        tipo="+";
+        tipo = "+";
     }//GEN-LAST:event_btnmasActionPerformed
 
     private void btnmultiplicaionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmultiplicaionActionPerformed
-        num = Long.parseLong(txta.getText());
+        num = Double.parseDouble(txta.getText());
         txta1.setText(num + "*");
         txta.setText("");
-        tipo="*";
+        tipo = "*";
     }//GEN-LAST:event_btnmultiplicaionActionPerformed
 
     private void btnmenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenosActionPerformed
-        num = Long.parseLong(txta.getText());
+        num = Double.parseDouble(txta.getText());
         txta1.setText(num + "-");
         txta.setText("");
-        tipo="-";
+        tipo = "-";
     }//GEN-LAST:event_btnmenosActionPerformed
 
     private void btndivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndivisionActionPerformed
-        num = Long.parseLong(txta.getText());
+        num = Double.parseDouble(txta.getText());
         txta1.setText(num + "/");
         txta.setText("");
-        tipo="/";
+        tipo = "/";
     }//GEN-LAST:event_btndivisionActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -303,10 +308,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("2");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "2");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -316,10 +321,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("3");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "3");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -329,10 +334,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("4");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "4");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -342,10 +347,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("5");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "5");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -355,10 +360,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("6");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "6");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -368,10 +373,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("7");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "7");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -381,10 +386,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("8");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "8");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -394,10 +399,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("9");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "9");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -407,10 +412,10 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("0");
             } else {
-                a = Long.parseLong(txta.getText());
+                a = txta.getText();
                 txta.setText(a + "0");
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -420,10 +425,14 @@ public class calculadoraa extends javax.swing.JFrame {
             if (txta.getText().equals("")) {
                 txta.setText("0.");
             } else {
-                a = Long.parseLong(txta.getText());
-                txta.setText(a + ".");
+                a = txta.getText();
+                if(a.indexOf(".",1)!=1){
+                    txta.setText(a+".");
+                }else{
+                    txta.setText(a);
+                }
             }
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Numero muy Grande \nERROR:" + e, "ERROR", 0);
         }
     }//GEN-LAST:event_btnpuntoActionPerformed
@@ -433,59 +442,64 @@ public class calculadoraa extends javax.swing.JFrame {
     }//GEN-LAST:event_txtaActionPerformed
 
     private void txtaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtaKeyTyped
-        Character car=evt.getKeyChar();
-        if((!Character.isDigit(car))){
-        evt.consume();
+        Character car = evt.getKeyChar();
+        if ((!Character.isDigit(car))) {
+            evt.consume();
         }
     }//GEN-LAST:event_txtaKeyTyped
 
     private void txta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txta1ActionPerformed
-        
+
     }//GEN-LAST:event_txta1ActionPerformed
 
     private void txta1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txta1KeyTyped
-        Character car=evt.getKeyChar();
-        if((!Character.isDigit(car))&&(car!='.')){
-        evt.consume();
+        Character car = evt.getKeyChar();
+        if ((!Character.isDigit(car)) && (car != '.')) {
+            evt.consume();
         }
     }//GEN-LAST:event_txta1KeyTyped
 
     private void btnigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnigualActionPerformed
+
+        b = Double.parseDouble(txta.getText());
         if (tipo.equals("+")) {
-            a = Long.parseLong(txta.getText());
-            res = num+a;
-            txta1.setText("");
-            txta.setText("" + res);
+            res = num + b;
         }
         if (tipo.equals("-")) {
-            a = Long.parseLong(txta.getText());
-            res = num-a;
-            txta1.setText("");
-            txta.setText("" + res);
+            res = num - b;
         }
         if (tipo.equals("*")) {
-            a = Long.parseLong(txta.getText());
-            res = num*a;
-            txta1.setText("");
-            txta.setText("" + res);
+            res = num * b;
         }
         if (tipo.equals("/")) {
-            try{
-            a = Long.parseLong(txta.getText());
-            res = num/a;
-            txta1.setText("");
-            txta.setText("" + res);
-            }catch(Exception e){
-                JOptionPane.showMessageDialog(null,"Error: "+e,"Error de resultado",0);
+            try {
+                res = num / b;
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Error: " + e, "Error de resultado", 0);
             }
         }
+        if(tipo.equals("rz")){
+            res = Math.sqrt(b);
+        }
+        
+        txta1.setText("");
+        txta.setText("" + res);
+        
     }//GEN-LAST:event_btnigualActionPerformed
 
     private void btnlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiarActionPerformed
         txta.setText("");
         txta1.setText("");
-        
+
     }//GEN-LAST:event_btnlimpiarActionPerformed
+
+    private void btnraizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnraizActionPerformed
+        num = Double.parseDouble(txta.getText());
+        txta1.setText("sqrt("+num + ")");
+        txta.setText(""+num);
+        tipo = "rz";
+        
+    }//GEN-LAST:event_btnraizActionPerformed
 
     /**
      * @param args the command line arguments
