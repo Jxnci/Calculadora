@@ -212,6 +212,11 @@ public class calculadoraa extends javax.swing.JFrame {
         getContentPane().add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 141, 50, 38));
 
         btnporcentaje.setText("%");
+        btnporcentaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnporcentajeActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnporcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 141, 50, 38));
 
         txta.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
@@ -460,8 +465,12 @@ public class calculadoraa extends javax.swing.JFrame {
     }//GEN-LAST:event_txta1KeyTyped
 
     private void btnigualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnigualActionPerformed
-
-        b = Double.parseDouble(txta.getText());
+        
+        if(txta.getText().equals("")){
+            b=num;
+        }else{
+            b = Double.parseDouble(txta.getText());
+        }
         if (tipo.equals("+")) {
             res = num + b;
         }
@@ -479,7 +488,14 @@ public class calculadoraa extends javax.swing.JFrame {
             }
         }
         if(tipo.equals("rz")){
-            res = Math.sqrt(b);
+            if(b<0){
+                res=0;
+            }else{
+                res = Math.sqrt(b);
+            }
+        }
+        if(tipo.equals("p")){
+            res = b/100;
         }
         
         txta1.setText("");
@@ -496,10 +512,17 @@ public class calculadoraa extends javax.swing.JFrame {
     private void btnraizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnraizActionPerformed
         num = Double.parseDouble(txta.getText());
         txta1.setText("sqrt("+num + ")");
-        txta.setText(""+num);
+        txta.setText("");
         tipo = "rz";
         
     }//GEN-LAST:event_btnraizActionPerformed
+
+    private void btnporcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnporcentajeActionPerformed
+        num = Double.parseDouble(txta.getText());
+        txta1.setText(num+ "%");
+        txta.setText("");
+        tipo = "p";
+    }//GEN-LAST:event_btnporcentajeActionPerformed
 
     /**
      * @param args the command line arguments
